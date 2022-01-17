@@ -143,6 +143,8 @@ ul .link.current {
   background-size: cover;
   background-position: center;
 }
+.overlay::before {
+}
 .banner {
   text-align: center;
   padding-top: 200px;
@@ -410,7 +412,7 @@ ul .link.current {
   line-height: 1.88;
   color: var(--primary-text-color);
 }
-.work-description-block {
+/* .work-description-block {
   position: relative;
 }
 .work-description-background {
@@ -420,14 +422,49 @@ ul .link.current {
   width: 100%;
   height: 100%;
   background-color: rgba(33, 150, 243, 0.9);
+
+  opacity: 0;
+}
+.work-description-background:hover {
+  opacity: 1;
 }
 .work-description {
   margin: 0;
   font-size: 18px;
   line-height: 1.56;
   color: var(--dark-bg-text-color);
-}
+} */
 
+.work-description-block {
+  position: relative;
+}
+.work-description-block::before {
+  position: absolute;
+  display: inline-block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+
+  opacity: 0;
+}
+.work-description {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  padding: 63px 24px;
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--dark-bg-text-color);
+
+  opacity: 0;
+}
+.work-description-block:hover::before {
+  opacity: 1;
+}
+.work-description:hover {
+  opacity: 1;
+}
 /* Подвал сайта */
 .footer {
   padding-top: 60px;
